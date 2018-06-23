@@ -1,7 +1,3 @@
-node_modules
-aws.json
-scss/.sass-cache
-scss/*.css
-scss/*.css.map
 dist/
-dev/
+node_modules/
+vendor/

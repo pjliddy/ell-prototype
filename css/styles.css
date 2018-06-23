@@ -5815,3 +5815,7 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+
+.test {
+  background-color: #337ab7;
+  color: #fff; }

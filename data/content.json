@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "content": {
+
+    },
+    "navpanel": {
+
+    }
+  },
+  "body": {
+    "content": {
+      "about": {
+
+      },
+      "activity": {
+
+      },
+      "examples": {
+
+      }
+    },
+    "comments": {
+      "comments": {
+
+      },
+      "notes": {
+
+      }
+    },
+    "aside": {
+      "video": {
+
+      },
+      "support": {
+        
+      }
+    }
+  }
+}
