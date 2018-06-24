@@ -9,7 +9,7 @@ let pageData;
 
 $(function() {
   setupTemplates();
-  renderPage('/data/content.json', './js/templates/body.hbs');
+  renderPage('/data/content.json', '/js/templates/body.hbs');
 });
 
 // Handlebars helpers
@@ -57,7 +57,7 @@ function setupTemplates() {
 
 function registerPartials(partials) {
   partials.forEach( name => {
-    getTemplate(`./js/templates/${name}.hbs`)
+    getTemplate(`/js/templates/${name}.hbs`)
       .then((source) => {
          Handlebars.registerPartial(name, source);
       })
@@ -76,7 +76,7 @@ function renderPage(dataSrc, templateSrc) {
       // console.log(pageData);
 
       // get template and render
-      getTemplate('./js/templates/body.hbs')
+      getTemplate('/js/templates/body.hbs')
         .then((templateSrc) => {
           prependTemplate('body', templateSrc, pageData)
         })
