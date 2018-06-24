@@ -1,0 +1,263 @@
+{
+  "hero": {
+    "content": {
+      "title": "Hanging Hashtags",
+      "copy": [
+        "Building Backgrounds",
+        "Demonstrations and Experiences"
+      ],
+      "reviews": 17,
+      "saves": 23,
+      "shares": 30,
+      "comments": 20
+    },
+    "navpanel": {
+      "title": "Resources",
+      "links": [
+        {
+          "label": "Download",
+          "copy": "Hanging Hashtag Think Sheet",
+          "type": "download",
+          "url": "javascript:void(0);"
+        },
+        {
+          "label": "Link",
+          "copy": "Using Visuals to Build Interest and Understanding",
+          "type": "external",
+          "url": "javascript:void(0);"
+        },
+        {
+          "label": "Link",
+          "copy": "Edutopia—Common Core in Action: 10 Visual Literacy Strategies (Edutopia)",
+          "type": "external",
+          "url": "javascript:void(0);"
+        }
+
+      ]
+    }
+  },
+  "body": {
+    "panels": [
+      {
+        "type": "about",
+        "id": "about",
+        "title": "About",
+        "content": {
+          "sections": [
+            {
+              "title": "Objective",
+              "type": "objective",
+              "copy": "Students will write short phrases related to their background knowledge, experiences, and assumptions about an imageconnected to the lesson topic."
+            },
+            {
+              "title": "Description",
+              "type": "description",
+              "copy": "An image is posted without any words or captions for all the students to see. Students think about and discuss the image in terms of what they see, how it makes them feel, and how it is important. After the discussion, students choose a word or short phrase about hte image that reflects their interpretaion or inference about its meaing and write it on an index card with a hashtag. The students then place the index cards all around the image ats a \"frame\". A final discussion occurs around shared and divergent words and ideas."
+            }
+          ],
+          "aside": {
+            "title": "Reading",
+            "subtitle": "Speaking, Listening",
+            "copy": "Small Groups, Full Classrooms, Grades K-12"
+          }
+        }
+      },
+      {
+        "type": "activity",
+        "id": "activity",
+        "title": "Activity Plan",
+        "content": {
+          "sections": [
+            {
+              "title": "Before Lesson",
+              "type": "before",
+              "copy": "Select and post and image—without words—for the activity. Consider using photographs, magazine clippings, cartoons, images from websites, or any other visual resource.",
+              "link": {
+                "label": "Download",
+                "copy": "Hanging Hashtag Think Sheet",
+                "type": "download",
+                "url": "javascript:void(0);"
+              },
+              "tips": [
+                "This activity may also be done with videos or video clips, so long as an image can be frozen on screen or pulled from a printed source (such as a movie poster).",
+                "Students may create a poster using programs such as Wordle or Tagxedo with keywords or phrases from the brainstorm activity.",
+                "Use this activity as an introduction to a unit of study."
+              ]
+            },
+            {
+              "title": "During Lesson",
+              "type": "during",
+              "lessons": [
+                {
+                  "copy": "Students view the image up close in order to notice details."
+                },
+                {
+                  "copy": "<strong>In partners, groups, or as a whole class, students share their initial observations.</strong>",
+                  "link": {
+                    "label": "Encourage students to use",
+                    "copy": "Hanging Hashtag Think Sheet",
+                    "type": "download",
+                    "url": "javascript:void(0);"
+                  },
+                  "info": [
+                    {
+                      "type": "alert",
+                      "copy": "<strong>Watch out for: </strong> Pair students as appropriate as they decide upon a hashtag for the image."
+                    },
+                    {
+                      "type": "success",
+                      "copy": "<strong>Success: </strong> Students actively studying the image and taking the time to share their ideas."
+                    }
+                  ]
+                },
+                {
+                  "copy": "Emphasize that there is no one correct answer and question students about the deeper meaning behind their initial observations."
+                },
+                {
+                  "copy": "Students write that keyword or phrase on an index card with a hashtag (#) before it, the same way they might do on social media.",
+                  "info": [
+                    {
+                      "type": "success",
+                      "copy": "<strong>Success: </strong> Students explaining why they choose a specific word or phrase."
+                    }
+                  ]
+                },
+                {
+                  "copy": "Students write that keyword or phrase on an index card with a hashtag (#) before it, the same way they might do on social media.",
+                  "info": [
+                    {
+                      "type": "info",
+                      "copy": "<strong>Watch out for: </strong> Encourage the use of new vocabulary by making sure studens understand every word used in this acrivity. Provide dictionary resources if necessary.."
+                    }
+                  ]
+                },
+                {
+                  "copy": "As students finish, invite them to post their cards around the image, creating a frame."
+                },
+                {
+                  "copy": "When the frame is finished and students have had a chance to examine it, gather students together as a whole class to reflect on the hashtags.",
+                  "info": [
+                    {
+                      "type": "success",
+                      "copy": "<strong>Success: </strong> Students noticing similarities, differences, surprises, context, or anything else that they noticed about hte workds they assigned to the image."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "examples",
+        "id": "examples",
+        "title": "Examples",
+        "content": {
+          "grade": "3-5",
+          "subject": "Math",
+          "objectives":[
+            {
+              "title": "Content Objective",
+              "copy": "Students will recognize volume as an attribure of solid figures."
+            },
+            {
+              "title": "Language Objective",
+              "copy": "Students will work to describe objects using prepositions."
+            }
+          ],
+          "copy": [
+            "Teacher will place a variety of images from magazines that show a volume in a variety of ways: drink containers, swimming pools, beakers, and boxes/cubes.",
+            "Teacher will explain to the students that they will be adding descriptive words in the form of hashtags fro how much and what is being displayed in each image.",
+            "Working in small groups, students will rotate from image to image, discussing what tehy see and work to add hashtags describing how much is there.",
+            "Gathering students and images together, the teacher will guide a discussion on the basics of volume, building on the students contributions to the images and dispelling misconceptions.",
+            "The teacher will continue with the lesson on recognizing vilume as an attribute of solid figures."
+          ]
+        }
+      }
+    ],
+    "comments": {
+      "type": "comments",
+      "title": "Comments",
+      "panels": [
+        {
+          "type": "comments",
+          "id": "comments",
+          "title": "Comments",
+          "count": 1,
+          "content": [
+            {
+              "user": "Karen I Earl",
+              "school": "Syracuse City Schools",
+              "date": "a year ago",
+              "copy": "Works well if you group low support with high support for second part of activity.",
+              "likes": 12
+            },
+            {
+              "user": "User 2 Name",
+              "school": "Other Schools",
+              "date": "yesterday",
+              "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+              "likes": 10
+            }
+          ]
+        },
+        {
+          "id": "notes",
+          "type": "notes",
+          "title": "Private Notes",
+          "count": 19,
+          "content": [
+            {
+              "title": "This is a note",
+              "date": "June 12, 2018",
+              "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+            },
+            {
+              "title": "This is another note",
+              "date": "May 21, 2017",
+              "copy": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            }
+          ]
+        }
+      ]
+    },
+    "aside": {
+      "video": {
+        "url": "https://www.youtube.com/embed/L4oQavzswpQ"
+      },
+      "support": {
+        "title": "Support Levels",
+        "items": [
+          {
+            "title": "High Support",
+            "subtitle": "Speaking 1 & 2",
+            "bullets": [
+              "Provide studetns with small word banks and visuals.",
+              "Encourage partnerships and chatter."
+            ],
+            "students": 8,
+            "url": "javascript:void(0);"
+          },
+          {
+            "title": "Moderate Support",
+            "subtitle": "Speaking 3 & 4",
+            "bullets": [
+              "Encourage chatter and collaboration during the creation of the hashtags."
+            ],
+            "students": 3,
+            "url": "javascript:void(0);"
+          },
+          {
+            "title": "Low Support",
+            "subtitle": "Speaking 5 & 6",
+            "bullets": [
+              "No additional supports needed."
+            ],
+            "students": 4,
+            "url": "javascript:void(0);"
+          }
+        ]
+      }
+    }
+  }
+}
