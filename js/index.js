@@ -9,7 +9,7 @@ let pageData;
 
 $(function() {
   setupTemplates();
-  renderPage('./data/content.json', './js/templates/body.hbs');
+  renderPage('/data/content.json', './js/templates/body.hbs');
 });
 
 // Handlebars helpers
