@@ -2,7 +2,12 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     {{#each panels as |panel|}}
-      {{!-- fix issue with conditional inside element tags (DRY) --}}
+
+      {{!--
+            TODO: fix issue with conditional inside element tags
+            to not repeat element tags, only set attributes
+      --}}
+
       {{#if @first}}
         {{!-- active tab --}}
         <li role="presentation" class="active">
@@ -12,9 +17,12 @@
         <li role="presentation">
           <a href="#{{panel.id}}" aria-controls="{{panel.id}}" role="tab" data-toggle="tab">
       {{/if}}
-           {{panel.title}}
-         </a>
-       </li>
+
+             {{panel.title}}
+             
+           </a>
+         </li>
+
     {{/each}}
   </ul>
 

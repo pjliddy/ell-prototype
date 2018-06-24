@@ -1,25 +1,28 @@
-<div class="row">
-  <div class="col-sm-9 col-md-8">
-    <div class="tab-panel-about">
+<div class="tab-panel-about">
+  <div class="row">
+    <div class="col-sm-9 col-md-8">
       {{#each content.sections as |section|}}
-        <h4>{{title}}</h4>
-        <p>
-          {{!-- add strong tags around objective --}}
-          {{#isEqual type value="objective"}}<strong>{{/isEqual}}
+        <div class="tab-panel-section">
+          <h4><span class="glyphicon icon-{{type}}"></span>{{title}}</h4>
+          <p>
+            {{!-- add strong tags around objective --}}
+            {{#isEqual type value="objective" }}<strong>{{/isEqual}}
 
-          {{copy}}
+            {{copy}}
 
-          {{!-- close strong tags around objective --}}
-          {{#isEqual type value="objective"}}</strong>{{/isEqual}}
-        </p>
+            {{!-- close strong tags around objective --}}
+            {{#isEqual type value="objective"}}</strong>{{/isEqual}}
+          </p>
+        </div>
       {{/each}}
     </div>
-  </div>
-  <div class="col-sm-3 col-md-4">
-    <div class="about-aside">
-      <h4>{{content.aside.title}}</h4>
-      <h5>{{content.aside.subtitle}}</h5>
-      <p>{{content.aside.copy}}</p>
+    <div class="col-sm-3 col-md-4">
+      <div class="about-aside">
+        <h4><span class="glyphicon glyphicon-bullhorn"></span>{{content.aside.title}}</h4>
+        <h5>{{content.aside.subtitle}}</h5>
+      </div>
+
+      <p class="sub-text">{{content.aside.copy}}</p>
     </div>
   </div>
 </div>

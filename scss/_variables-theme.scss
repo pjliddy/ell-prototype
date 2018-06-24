@@ -1,0 +1,28 @@
+// Custom Theme Variables
+
+// spacing variables
+
+$base-space: $grid-gutter-width;
+$three-quarter-space: $grid-gutter-width * .75;
+$half-space: $grid-gutter-width * .5;
+$quarter-space: $grid-gutter-width *.25;
+
+// header/footer variables
+
+$header-page-height: 60px;
+$header-nav-height: 48px;
+$header-bg-color: $gray-lighter;
+$header-border-color: $gray;
+
+$footer-height: 30px;
+
+// hero variables
+
+$hero-min-height: 360px;
+$hero-color-secondary: $gray-lighter;
+$hero-icon-size: 42px;
+$hero-font-size: ceil(($font-size-base * 1.25)); // ~18px
+
+// share variables
+
+$share-badge-bg-color: $gray-lighter;

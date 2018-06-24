@@ -1,5 +1,329 @@
-// @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i');
-// @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700');
-
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700');
 @import 'variables';
 @import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'variables-theme';
+
+// fix Chrome glitch in default ol/ul positioning
+ol,
+ul {
+  -webkit-padding-start: 20px;
+
+  li:not(:last-of-type) {
+    margin-bottom: $quarter-space;
+  }
+}
+//
+// HEADER AND FOOTER STYLES
+//
+
+// header placeholder to set base header styles
+
+%header {
+  align-items: center;
+  background: $header-bg-color;
+  border-bottom: 1px solid $header-border-color;
+  display: flex;
+}
+
+// top level page header (FPO)
+
+.header-page {
+  @extend %header;
+  min-height: $header-page-height;
+}
+
+// nav header (FPO)
+
+.header-nav {
+  @extend %header;
+  min-height: $header-nav-height;
+}
+
+// footer styles
+
+footer {
+  align-items: center;
+  background: $header-bg-color;
+  border-top: 1px solid $header-border-color;
+  display: flex;
+  min-height: $footer-height;
+}
+
+//
+// HERO STYLES
+//
+.hero {
+  @media (min-width: $screen-md) {
+    padding: $base-space;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @media (min-width: $screen-md) {
+      min-height: $hero-min-height;
+    }
+  }
+
+  .hero-icon {
+    color: $hero-color-secondary;
+    font-size: $hero-icon-size;
+    margin-right: $quarter-space;
+  }
+
+  .hero-copy {
+    color: $hero-color-secondary;
+    display: inline-block;
+
+    p {
+      font-size: $hero-font-size;
+      margin-bottom: 0;
+    }
+  }
+
+  .hero-footer {
+    // use flex to push to bottom
+    margin-top: auto;
+  }
+
+  .hero-aside {
+    color: $text-color;
+  }
+}
+
+//
+// COMPONENTS
+//
+
+// ratings component used in hero
+
+.ratings {
+  align-items: center;
+  display: flex;
+  margin-bottom: $half-space;
+
+  .stars {
+    display: inline-block;
+    font-size: $hero-font-size;
+    line-height: $hero-font-size;
+    margin-right: $quarter-space;
+  }
+}
+
+// share component used in hero
+
+.share {
+  .btn-group + .btn-group {
+    margin-left: $quarter-space;
+  }
+
+  .btn {
+    border-radius: $btn-border-radius-base 0 0 $btn-border-radius-base;
+    padding: 6px 0 6px 12px;
+
+    .badge {
+      background: $brand-primary;
+      border-radius: 0;
+      margin: -6px 1px -6px 6px;
+      padding: 9px 6px;
+    }
+  }
+}
+
+// nav-panel component used in hero
+
+.nav-panel {
+  .panel-heading {
+    border-bottom: 0;
+    padding-bottom: 0;
+
+    .panel-title {
+      font-size: $hero-font-size;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    li:not(:last-of-type) {
+      margin-bottom: $half-space;
+    }
+  }
+}
+
+.support {
+  border: 0;
+  box-shadow: none;
+
+  .panel-heading {
+    border: 0;
+    padding: $half-space 0;
+
+    .panel-title {
+      font-size: $hero-font-size;
+    }
+  }
+
+  .support-list {
+    border: 1px solid $gray-light;
+  }
+
+  .support-list-item:not(:first-of-type) {
+    border-top: 1px solid $gray-light;
+  }
+
+  .support-list-item-heading {
+    border-bottom: 1px solid $gray-light;
+    display: flex;
+    padding: $half-space $quarter-space;
+
+    h4 {
+      margin: 0;
+
+      span {
+        font-size: $font-size-base;
+      }
+    }
+
+    a {
+      margin-left: auto;
+    }
+
+    @media (min-width: $screen-md) and (max-width: $screen-lg) {
+      flex-direction: column;
+
+      a {
+        margin-left: 0;
+        margin-top: $quarter-space;
+      }
+    }
+
+  }
+
+  .support-list-item-body {
+    background-color: $gray-lighter;
+    padding: $quarter-space;
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
+}
+
+%link-icon {
+  display: block;
+
+  &::before {
+    color: $link-color;
+    // default = external link
+    content: '\e164';
+    float: left;
+    font-family: 'Glyphicons Halflings';
+    font-size: 18px;
+    margin-right: $quarter-space;
+    margin-top: -4px;
+  }
+}
+
+.link-download {
+  @extend %link-icon;
+
+  &::before {
+    content: '\e025';
+  }
+}
+
+.link-external {
+  @extend %link-icon;
+
+  &::before {
+    content: '\e164';
+  }
+}
+
+//
+// TAB PANEL STYLES
+//
+
+.body-tabs {
+  margin-bottom: $line-height-computed;
+
+  .nav-tabs {
+    display: flex;
+    width: 100%;
+
+    li {
+      flex-grow: 1;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    li:not(.active) > a {
+      background-color: $gray-lighter;
+    }
+  }
+
+  .tab-pane {
+    border: 1px solid $panel-default-border;
+    border-top: 0;
+    padding: $panel-body-padding;
+  }
+}
+
+
+// icon classes
+
+.icon-objective {
+  &::before {
+    content: '\e165';
+  }
+}
+
+.icon-description {
+  &::before {
+    content: '\e022';
+  }
+}
+
+// TAB PANEL COMPONENTS
+
+.tab-panel-section {
+  margin-bottom: $line-height-computed;
+}
+
+.tab-panel-about {
+  .glyphicon {
+    margin-right: $quarter-space;
+    top: 2px;
+  }
+
+  .about-aside {
+    background: $header-bg-color;
+    border: 1px solid $header-border-color;
+    margin-bottom: $quarter-space;
+    padding: $half-space;
+
+    h4 {
+      margin-top: 0;
+    }
+  }
+
+  .sub-text {
+    color: $gray-light;
+    font-size: $font-size-small;
+  }
+}
+
+
+
+// typography styles
+
+
+
+.video {
+  margin-bottom: $line-height-computed;
+}
