@@ -57,7 +57,7 @@ function setupTemplates() {
 
 function registerPartials(partials) {
   partials.forEach( name => {
-    getTemplate(`js/templates/${name}.hbs`)
+    getTemplate(`/js/templates/${name}.hbs`)
       .then((source) => {
          Handlebars.registerPartial(name, source);
       })
