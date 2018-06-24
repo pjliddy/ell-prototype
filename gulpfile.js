@@ -6,6 +6,9 @@
 
 // default gulp package
 const gulp = require('gulp')
+// var compileHandlebars = require('gulp-compile-handlebars')
+// var handlebars = require('gulp-handlebars');
+
 
 // gulp server packages
 const browserSync = require('browser-sync').create()
@@ -41,6 +44,7 @@ const hbsDest = distDest + 'js/templates/'
 
 const dataSrc = 'data/*.json'
 const dataDest = distDest + 'data/'
+const dataWatch = dataDest + '*.json'
 
 const sassWatch = 'scss/*.scss'
 const sassSrc = 'scss/styles.scss'
@@ -71,7 +75,9 @@ gulp.task('default', [
   'uglify-js',
   // 'copy-images',
   'copy-data',
-  'copy-vendor'
+  'copy-vendor',
+  'copy-fonts'
+
 ])
 
 // Run development server task with browserSync locally on port 3000
@@ -79,18 +85,21 @@ gulp.task('serve', ['browserSync', 'default'], function() {
   // run gulp tasks when source files change
   gulp.watch(htmlSrc, ['minify-html'])
   gulp.watch(hbsSrc, ['minify-handlebars'])
+
+  // gulp.watch(hbsSrc, ['compile-handlebars'])
   gulp.watch(sassWatch, ['minify-css'])
   gulp.watch(jsSrc, ['uglify-js'])
   // gulp.watch(imgSrc, ['copy-images'])
   gulp.watch(vendorSrc, ['copy-vendor'])
-  gulp.watch(vendorSrc, ['copy-data'])
+  gulp.watch(dataSrc, ['copy-data'])
 
   // Reload the browser whenever files change
   gulp.watch(htmlDest, browserSync.reload)
+  gulp.watch(hbsDest, browserSync.reload)
   gulp.watch(jsDest, browserSync.reload)
   gulp.watch(vendorDest, browserSync.reload)
   gulp.watch(cssDest, browserSync.reload)
-  gulp.watch(dataDest, browserSync.reload)
+  gulp.watch(dataWatch, browserSync.reload)
 })
 
 // Configure the browserSync task
@@ -107,25 +116,25 @@ gulp.task('browserSync', function() {
  */
 
  // use minifyHTML to minify html and handlebars files
- function minifyHtmlFiles(src, dest) {
-   return gulp.src(src)
-     .pipe(minifyHTML({
-       conditionals: true,
-       spare: true
-     }))
-     // .pipe(changed(dest))
-     .pipe(gulp.dest(dest))
-     .pipe(browserSync.reload({
-       stream: true
-     }))
- }
+function minifyHtmlFiles(src, dest) {
+  return gulp.src(src)
+    .pipe(minifyHTML({
+      conditionals: true,
+      spare: true
+    }))
+    // .pipe(changed(dest))
+    .pipe(gulp.dest(dest))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+}
 
- // Minify html to dist/
- gulp.task('minify-html', function() {
-   return minifyHtmlFiles(htmlSrc, htmlDest)
- })
+// Minify html to dist/
+gulp.task('minify-html', function() {
+  return minifyHtmlFiles(htmlSrc, htmlDest)
+})
 
- // Minify handlebars to dist/
+// Minify handlebars to dist/
  gulp.task('minify-handlebars', function() {
    return minifyHtmlFiles(hbsSrc, hbsDest)
  })
@@ -177,6 +186,10 @@ gulp.task('deploy-vendor', function() {
   return copy(vendorSrc, vendorDest)
 })
 
+gulp.task('copy-fonts', function() {
+  return copy('vendor/bootstrap/fonts/*.*', 'dist/fonts/bootstrap')
+})
+
 // Copy vendor libraries from /node_modules into /vendor
 gulp.task('copy-vendor', function() {
   gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
@@ -219,12 +232,31 @@ gulp.task('copy-data', function() {
 })
 
 
+// gulp.task('handlebars', function() {
+//   return gulp.src('js/templates/*.hbs')
+//   .pipe(precompileHandlebars())
+//   .pipe(rename({ extname: '.js' })
+//   .pipe(defineModule('es6'))
+//   .pipe(gulp.dest('/dist/js/templates'))
+// })
 
 
 
-
-
-
+// var handlebars = require('gulp-handlebars');
+// var wrap = require('gulp-wrap');
+// var declare = require('gulp-declare');
+//
+// gulp.task('handlebars', function () {
+//   gulp.src('js/templates/*.hbs')
+//     .pipe(handlebars())
+//     .pipe(wrap('Handlebars.template(<%= contents %>)'))
+//     .pipe(declare({
+//       namespace: 'templates',
+//       noRedeclare: true
+//     }))
+//     .pipe(concat('templates.js'))
+//     .pipe(gulp.dest('dist/js/templates'));
+// });
 
 
 

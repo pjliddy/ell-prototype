@@ -1,4 +1,5 @@
 'use strict'
+Handlebars.logger.level = 0;
 
 // store global page data
 
@@ -7,8 +8,62 @@ let pageData;
 // document ready
 
 $(function() {
-  renderPage('/data/content.json', 'js/templates/body.hbs');
+  setupTemplates();
+  renderPage('/data/content.json', '/js/templates/body.hbs');
 });
+
+// Handlebars helpers
+
+Handlebars.registerHelper('getTabPanel', function (type, context) {
+  var partial = Handlebars.partials['tab-panel-' + type];
+  if (typeof partial !== 'function') {
+    partial = Handlebars.compile(partial);
+  }
+  return partial(context); // build up the context some how
+});
+
+Handlebars.registerHelper("isEqual", function(conditional, options) {
+  if (options.hash.value === conditional) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
+
+
+// setup Handlebars partials
+
+function setupTemplates() {
+  // refactor to iterate through files in js/templates/*.hbs
+  registerPartials([
+    'content-aside',
+    'content-main',
+    'footer',
+    'header',
+    'hero',
+    'nav-panel',
+    'ratings',
+    'share',
+    'support',
+    'tab-panel-about',
+    'tab-panel-activity',
+    'tab-panel-comments',
+    'tab-panel-examples',
+    'tab-panel-notes',
+    'tab-panels',
+    'video'
+  ]);
+}
+
+function registerPartials(partials) {
+  partials.forEach( name => {
+    getTemplate(`js/templates/${name}.hbs`)
+      .then((source) => {
+         Handlebars.registerPartial(name, source);
+      })
+      .fail((err) => console.log(`${name} is not available`))
+  })
+}
 
 // get page data and render page template
 
@@ -17,6 +72,8 @@ function renderPage(dataSrc, templateSrc) {
     .then((data) => {
       // store global page data
       pageData = data;
+
+      // console.log(pageData);
 
       // get template and render
       getTemplate('js/templates/body.hbs')
@@ -47,11 +104,19 @@ function getTemplate (path) {
   })
 }
 
+// render template and insert in target element
+
+function renderTemplate(source, data) {
+  const template  = Handlebars.compile(source)
+  const content = template({data:data})
+  return content
+}
+
 // render template and prepend target element
 
 function prependTemplate(target, source, data) {
   const template  = Handlebars.compile(source)
-  const content = template({data:data})
+  const content = template({data})
   $(target).prepend(content)
 }
 
@@ -62,13 +127,6 @@ function prependTemplate(target, source, data) {
 
 
 
-// render template and insert in target element
-
-function renderTemplate(source, data) {
-  const template  = Handlebars.compile(source)
-  const content = template({data:data})
-  return content
-}
 
 // render template and replace target element
 

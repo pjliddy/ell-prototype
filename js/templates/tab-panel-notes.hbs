@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="tab-panel-comments">
+      {{#if content}}
+        {{#each content as |comment|}}
+          <div class="comment">
+            <p><strong>{{title}}</strong></p>
+            <p>{{date}}</p>
+            <p>{{copy}}</p>
+          </div>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+</div>

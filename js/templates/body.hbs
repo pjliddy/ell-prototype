@@ -1,13 +1,13 @@
-<header>
-  HEADER GOES HERE
-</header>
+{{!-- page header --}}
+{{> header}}
 
 <main>
-  <div class="test">
-    <p>{{data.content}}</p>
-  </div>
+  {{!-- hero region --}}
+  {{> hero data.hero}}
+
+  {{!-- main page content --}}
+  {{> content-main data.body}}
 </main>
 
-<footer>
-  FOOTER GOES HERE
-</footer>
+{{!-- page footer --}}
+{{> footer }}

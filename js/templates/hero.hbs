@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      {{!-- hero main content --}}
+      <div class="col-md-8">
+        <h1>{{content.title}}</h1>
+        {{#each content.copy as |copy|}}
+          <p>{{copy}}</p>
+        {{/each}}
+
+        {{!-- hero footer --}}
+        <div class="hero-footer">
+          {{!-- ratings module --}}
+          {{> ratings content}}
+
+          {{!-- share module --}}
+          {{> share content}}
+        </div>
+      </div>
+
+      {{!-- hero aside --}}
+      <div class="col-md-4">
+        {{!-- navpanel module --}}
+        {{> nav-panel navpanel}}
+      </div>
+    </div>
+  </div>
+</div>

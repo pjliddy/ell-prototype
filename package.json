@@ -2,6 +2,7 @@
   "name": "ell-prototype",
   "version": "1.0.1",
   "private": true,
+  "repository": "https://github.com/pjliddy/ell-prototype.git",
   "license": {
     "software": "GNU GPLv3",
     "content": "CC­BY­NC­SA 4.0"
@@ -22,10 +23,14 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
     "gulp-clean-css": "^3.0.0",
+    "gulp-compile-handlebars": "^0.6.1",
     "gulp-concat": "^2.6.1",
+    "gulp-declare": "^0.3.0",
+    "gulp-handlebars": "^5.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^3.0.0",
+    "gulp-wrap": "^0.14.0",
     "handlebars": "^4.0.5",
     "handlebars-loader": "^1.4.0",
     "jquery": "^1.11.3"

@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{title}}</h3>
+  </div>
+
+  <!-- List group -->
+  <ul class="list-group">
+    {{#each items as |item|}}
+    <li class="list-group-item">
+      <h4>{{title}}: <small>{{subtitle}}</small></h4>
+      <a href="{{url}}">{{students}} Students</a>
+      <ul class="bullet-list">
+        {{#each bullets as |bullet|}}
+          <li>{{bullet}}</li>
+        {{/each}}
+      </ul>
+    </li>
+    {{/each}}
+  </ul>
+</div>

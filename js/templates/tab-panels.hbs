@@ -1,0 +1,35 @@
+<div class="body-tabs">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    {{#each panels as |panel|}}
+      {{!-- fix issue with conditional inside element tags (DRY) --}}
+      {{#if @first}}
+        {{!-- active tab --}}
+        <li role="presentation" class="active">
+          <a href="#{{panel.id}}" aria-controls="{{panel.id}}" role="tab" data-toggle="tab" aria-expanded="true">
+      {{else}}
+        {{!-- non-active tab --}}
+        <li role="presentation">
+          <a href="#{{panel.id}}" aria-controls="{{panel.id}}" role="tab" data-toggle="tab">
+      {{/if}}
+           {{panel.title}}
+         </a>
+       </li>
+    {{/each}}
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+    {{#each panels as |panel|}}
+      <div role="tabpanel"
+           class="tab-pane {{#if @first}} active{{/if}}"
+           id="{{panel.id}}">
+
+         {{!-- panel content goes here --}}
+         {{{getTabPanel id panel}}}
+      </div>
+    {{/each}}
+  </div>
+
+</div>
