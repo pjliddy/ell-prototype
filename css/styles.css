@@ -5822,6 +5822,10 @@ ul {
   ul li:not(:last-of-type) {
     margin-bottom: 8px; }
 
+.span-label {
+  font-weight: bold;
+  text-transform: uppercase; }
+
 .header-page, .header-nav {
   align-items: center;
   background: #eeeeee;
@@ -5906,6 +5910,9 @@ footer {
   .nav-panel ul li:not(:last-of-type) {
     margin-bottom: 16px; }
 
+.video {
+  margin-bottom: 20px; }
+
 .support {
   border: 0;
   box-shadow: none; }
@@ -5940,9 +5947,24 @@ footer {
     .support .support-list-item-body ul {
       margin-bottom: 0; }
 
-.link-download, .link-external {
+.icon-objective::before {
+  content: '\e165'; }
+
+.icon-description::before {
+  content: '\e022'; }
+
+.icon-before::before {
+  content: '\e043'; }
+
+.icon-during::before {
+  content: '\e123'; }
+
+.icon-tip::before {
+  content: '\e062'; }
+
+.link-download, .link-external, .list-tips li {
   display: block; }
-  .link-download::before, .link-external::before {
+  .link-download::before, .link-external::before, .list-tips li::before {
     color: #337ab7;
     content: '\e164';
     float: left;
@@ -5957,6 +5979,16 @@ footer {
 .link-external::before {
   content: '\e164'; }
 
+.list-tips {
+  -webkit-padding-start: 0;
+  margin-bottom: 32px; }
+  .list-tips li, .list-tips li::before {
+    color: #777777; }
+  .list-tips li:not(:last-of-type) {
+    margin-bottom: 16px; }
+  .list-tips li::before {
+    content: '\e062'; }
+
 .body-tabs {
   margin-bottom: 20px; }
   .body-tabs .nav-tabs {
@@ -5969,26 +6001,20 @@ footer {
     .body-tabs .nav-tabs li:not(.active) > a {
       background-color: #eeeeee; }
   .body-tabs .tab-pane {
-    border: 1px solid #ddd;
+    border: 1px solid #eeeeee;
     border-top: 0;
     padding: 15px; }
 
-.icon-objective::before {
-  content: '\e165'; }
-
-.icon-description::before {
-  content: '\e022'; }
+div[class^="tab-panel-"] .glyphicon {
+  margin-right: 8px;
+  top: 2px; }
 
 .tab-panel-section {
   margin-bottom: 20px; }
 
-.tab-panel-about .glyphicon {
-  margin-right: 8px;
-  top: 2px; }
-
 .tab-panel-about .about-aside {
   background: #eeeeee;
-  border: 1px solid #555555;
+  border: 1px solid #777777;
   margin-bottom: 8px;
   padding: 16px; }
   .tab-panel-about .about-aside h4 {
@@ -5998,5 +6024,40 @@ footer {
   color: #777777;
   font-size: 12px; }
 
-.video {
-  margin-bottom: 20px; }
+.tab-panel-activity a {
+  margin: 16px 0; }
+
+.tab-panel-comments {
+  padding-bottom: 16px; }
+
+.comment {
+  display: flex; }
+  .comment:not(:last-of-type) {
+    border-bottom: 1px solid #777777;
+    margin-bottom: 32px;
+    padding-bottom: 32px; }
+  .comment img {
+    height: 100%;
+    margin-right: 16px; }
+  .comment .user {
+    font-weight: bold;
+    text-transform: uppercase; }
+  .comment .date {
+    color: #777777;
+    font-size: 12px; }
+  .comment .like, .comment .like:hover {
+    text-decoration: none; }
+  .comment .like .glyphicon {
+    margin-right: 8px; }
+
+.note:not(:last-of-type) {
+  border-bottom: 1px solid #777777;
+  margin-bottom: 32px;
+  padding-bottom: 32px; }
+
+.note .title {
+  font-weight: bold; }
+
+.note .date {
+  color: #777777;
+  font-size: 12px; }

@@ -1,9 +1,4 @@
 'use strict'
-Handlebars.logger.level = 0;
-
-// store global page data
-
-let pageData;
 
 // document ready
 
@@ -12,29 +7,10 @@ $(function() {
   renderPage('data/content.json', 'js/templates/body.hbs');
 });
 
-// Handlebars helpers
-
-Handlebars.registerHelper('getTabPanel', function (type, context) {
-  var partial = Handlebars.partials['tab-panel-' + type];
-  if (typeof partial !== 'function') {
-    partial = Handlebars.compile(partial);
-  }
-  return partial(context); // build up the context some how
-});
-
-Handlebars.registerHelper("isEqual", function(conditional, options) {
-  if (options.hash.value === conditional) {
-    return options.fn(this);
-  } else {
-    return options.inverse(this);
-  }
-});
-
-
 // setup Handlebars partials
 
 function setupTemplates() {
-  // refactor to iterate through files in js/templates/*.hbs
+  // TODO: refactor to iterate through files in js/templates/*.hbs
   registerPartials([
     'content-aside',
     'content-main',
@@ -55,6 +31,24 @@ function setupTemplates() {
   ]);
 }
 
+// Handlebars helpers
+
+Handlebars.registerHelper('getTabPanel', function (type, context) {
+  var partial = Handlebars.partials['tab-panel-' + type];
+  if (typeof partial !== 'function') {
+    partial = Handlebars.compile(partial);
+  }
+  return partial(context); // build up the context some how
+});
+
+Handlebars.registerHelper("isEqual", function(conditional, options) {
+  if (options.hash.value === conditional) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
+
 function registerPartials(partials) {
   partials.forEach( name => {
     getTemplate(`js/templates/${name}.hbs`)
@@ -70,21 +64,15 @@ function registerPartials(partials) {
 function renderPage(dataSrc, templateSrc) {
   getPageData(dataSrc)
     .then((data) => {
-      // store global page data
-      pageData = data;
-
-      // console.log(pageData);
-
-      // get template and render
+        // get template and render
       getTemplate('js/templates/body.hbs')
         .then((templateSrc) => {
-          prependTemplate('body', templateSrc, pageData)
+          prependTemplate('body', templateSrc, data)
         })
         .fail((err) => console.log('template is not available'))
     })
     .fail((err) => console.log('data not available'))
 }
-
 
 // make AJAX call to page data JSON file and return promise
 
@@ -118,34 +106,4 @@ function prependTemplate(target, source, data) {
   const template  = Handlebars.compile(source)
   const content = template({data})
   $(target).prepend(content)
-}
-
-
-
-
-
-
-
-
-
-// render template and replace target element
-
-function replaceTemplate(target, source, data) {
-  const template  = Handlebars.compile(source)
-  const content = template({data:data})
-  $(target).html(content)
-}
-
-// render template and append to target element
-
-function appendTemplate(target, source, data) {
-  const template  = Handlebars.compile(source)
-  const content = template({data:data})
-  $(target).append(content)
-}
-
-// clear element from DOM
-
-function removeTemplate(target) {
-  $(target).remove()
 }

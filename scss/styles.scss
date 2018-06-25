@@ -3,6 +3,10 @@
 @import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'variables-theme';
 
+//
+// GLOBAL ELEMENTS
+//
+
 // fix Chrome glitch in default ol/ul positioning
 ol,
 ul {
@@ -12,6 +16,13 @@ ul {
     margin-bottom: $quarter-space;
   }
 }
+
+// set span-label to bold caps
+.span-label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 //
 // HEADER AND FOOTER STYLES
 //
@@ -52,6 +63,7 @@ footer {
 //
 // HERO STYLES
 //
+
 .hero {
   @media (min-width: $screen-md) {
     padding: $base-space;
@@ -155,6 +167,15 @@ footer {
   }
 }
 
+// video component used in sidebar
+
+
+.video {
+  margin-bottom: $line-height-computed;
+}
+
+// support component used in sidebar
+
 .support {
   border: 0;
   box-shadow: none;
@@ -214,12 +235,54 @@ footer {
   }
 }
 
+//
+// CUSTOM ICON CLASSES
+//
+
+// icon classes
+
+.icon-objective {
+  &::before {
+    content: '\e165';
+  }
+}
+
+.icon-description {
+  &::before {
+    content: '\e022';
+  }
+}
+
+.icon-before {
+  &::before {
+    content: '\e043';
+  }
+}
+
+.icon-during {
+  &::before {
+    content: '\e123';
+  }
+}
+
+.icon-tip{
+  &::before {
+    content: '\e062';
+  }
+}
+
+//
+// CUSTOM LINK STYLES WITH ICONS
+//
+
+// default link-icon SASS placeholder
+
 %link-icon {
   display: block;
 
   &::before {
     color: $link-color;
-    // default = external link
+    // default = external link icon
     content: '\e164';
     float: left;
     font-family: 'Glyphicons Halflings';
@@ -229,6 +292,8 @@ footer {
   }
 }
 
+// download link icon
+
 .link-download {
   @extend %link-icon;
 
@@ -237,11 +302,37 @@ footer {
   }
 }
 
+// external link icon
+
 .link-external {
   @extend %link-icon;
 
   &::before {
     content: '\e164';
+  }
+}
+
+// tips list items with icons
+
+.list-tips {
+  -webkit-padding-start: 0;
+  margin-bottom: $base-space;
+
+  li {
+    @extend %link-icon;
+
+    &,
+    &::before {
+      color: $gray-light;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: $half-space;
+    }
+
+    &::before {
+      content: '\e062';
+    }
   }
 }
 
@@ -268,42 +359,31 @@ footer {
   }
 
   .tab-pane {
-    border: 1px solid $panel-default-border;
+    border: 1px solid $gray-lighter;
     border-top: 0;
     padding: $panel-body-padding;
   }
 }
 
+// tab panel components
 
-// icon classes
-
-.icon-objective {
-  &::before {
-    content: '\e165';
+div[class^="tab-panel-"] {
+  .glyphicon {
+    margin-right: $quarter-space;
+    top: 2px;
   }
 }
-
-.icon-description {
-  &::before {
-    content: '\e022';
-  }
-}
-
-// TAB PANEL COMPONENTS
 
 .tab-panel-section {
   margin-bottom: $line-height-computed;
 }
 
-.tab-panel-about {
-  .glyphicon {
-    margin-right: $quarter-space;
-    top: 2px;
-  }
+// about panel styles
 
+.tab-panel-about {
   .about-aside {
     background: $header-bg-color;
-    border: 1px solid $header-border-color;
+    border: 1px solid $gray-light;
     margin-bottom: $quarter-space;
     padding: $half-space;
 
@@ -318,12 +398,72 @@ footer {
   }
 }
 
+// activity panel styles
 
+.tab-panel-activity {
+  a {
+    margin: $half-space 0;
+  }
+}
 
-// typography styles
+// comments panel styles
 
+.tab-panel-comments {
+  padding-bottom: $half-space;
+}
 
+.comment {
+  display: flex;
 
-.video {
-  margin-bottom: $line-height-computed;
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: $base-space;
+    padding-bottom: $base-space;
+  }
+
+  img {
+    height: 100%;
+    margin-right: $half-space;
+  }
+
+  .user {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .date {
+    color: $gray-light;
+    font-size: $font-size-small;
+  }
+
+  .like {
+    &,
+    &:hover {
+      text-decoration: none;
+    }
+
+    .glyphicon {
+      margin-right: $quarter-space;
+    }
+  }
+}
+
+// note panel styles
+
+.note {
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: $base-space;
+    padding-bottom: $base-space;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  .date {
+    color: $gray-light;
+    font-size: $font-size-small;
+  }
+
 }

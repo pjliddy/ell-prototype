@@ -1,11 +1,13 @@
 <div class="row">
   <div class="col-xs-12">
-    <div class="tab-panel-comments">
+    <div class="tab-panel-notes">
       {{#if content}}
         {{#each content as |comment|}}
-          <div class="comment">
-            <p><strong>{{title}}</strong></p>
-            <p>{{date}}</p>
+          <div class="note">
+            <p>
+              <span class="title">{{title}}</span>
+              <span class="date">{{date}}</span>
+            </p>
             <p>{{copy}}</p>
           </div>
         {{/each}}

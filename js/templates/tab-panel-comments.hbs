@@ -4,11 +4,16 @@
       {{#if content}}
         {{#each content as |comment|}}
           <div class="comment">
-            <p><strong>{{user}}</strong></p>
-            <p>{{school}}</p>
-            <p>{{date}}</p>
-            <p>{{copy}}</p>
-            <p>Likes: {{likes}}</p>
+            <img class="img-circle" src="http://via.placeholder.com/64x64" />
+            <div class="content">
+              <p>
+                <span class="user">{{user}}</span>
+                <span class="school">({{school}})</span>
+                <span class="date">{{date}}</span>
+              </p>
+              <p>{{copy}}</p>
+              <a class="like" href="javascript:void(0);"><span class="glyphicon glyphicon-thumbs-up"></span>{{likes}}</a>
+            </div>
           </div>
         {{/each}}
       {{/if}}

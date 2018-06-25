@@ -2,7 +2,7 @@
   <div class="col-xs-12">
     <div class="tab-panel-activity">
       {{#each content.sections as |section|}}
-        <h4>{{title}}</h4>
+        <h4><span class="glyphicon icon-{{type}}"></span>{{title}}</h4>
         {{!-- intro copy --}}
         {{#if copy}}
           <p>
@@ -11,15 +11,15 @@
         {{/if}}
         {{!-- link --}}
         {{#if link}}
-          <a href="{{link.url}}">{{link.label}}: {{link.copy}}</a>
+          <a class="link-{{link.type}}" href="{{link.url}}"><span class="span-label">{{link.label}}:</span> {{link.copy}}</a>
         {{/if}}
 
         {{!-- tips section --}}
         {{#if tips}}
-          <ul class="tips">
+          <ul class="list-tips">
             {{#each tips as |tip|}}
               <li>
-                TIP: {{tip}}
+                <span class="span-label">TIP:</span> {{tip}}
               </li>
             {{/each}}
           </ul>
@@ -34,7 +34,7 @@
 
                 {{!-- optional link --}}
                 {{#if link}}
-                  <p><a href="{{link.url}}">{{link.label}}: {{link.copy}}</a></p>
+                  <p><a class="link-{{link.type}}" href="{{link.url}}"><span class="span-label">{{link.label}}:</span> {{link.copy}}</a></p>
                 {{/if}}
 
                 {{!-- optional alerts --}}
