@@ -1,5 +1,8 @@
 'use strict'
 
+// to publish to GitHub Pages:
+// git subtree push --prefix dist origin gh-pages
+
 // document ready
 
 $(function() {
