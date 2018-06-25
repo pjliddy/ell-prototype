@@ -102,11 +102,11 @@
                   "info": [
                     {
                       "type": "alert",
-                      "copy": "<strong>Watch out for: </strong> Pair students as appropriate as they decide upon a hashtag for the image."
+                      "copy": "Pair students as appropriate as they decide upon a hashtag for the image."
                     },
                     {
                       "type": "success",
-                      "copy": "<strong>Success: </strong> Students actively studying the image and taking the time to share their ideas."
+                      "copy": "Students actively studying the image and taking the time to share their ideas."
                     }
                   ]
                 },
@@ -118,7 +118,7 @@
                   "info": [
                     {
                       "type": "success",
-                      "copy": "<strong>Success: </strong> Students explaining why they choose a specific word or phrase."
+                      "copy": "Students explaining why they choose a specific word or phrase."
                     }
                   ]
                 },
@@ -127,7 +127,7 @@
                   "info": [
                     {
                       "type": "info",
-                      "copy": "<strong>Watch out for: </strong> Encourage the use of new vocabulary by making sure studens understand every word used in this acrivity. Provide dictionary resources if necessary.."
+                      "copy": "Encourage the use of new vocabulary by making sure studens understand every word used in this acrivity. Provide dictionary resources if necessary.."
                     }
                   ]
                 },
@@ -139,7 +139,7 @@
                   "info": [
                     {
                       "type": "success",
-                      "copy": "<strong>Success: </strong> Students noticing similarities, differences, surprises, context, or anything else that they noticed about hte workds they assigned to the image."
+                      "copy": "Students noticing similarities, differences, surprises, context, or anything else that they noticed about hte workds they assigned to the image."
                     }
                   ]
                 }
