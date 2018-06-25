@@ -11,7 +11,7 @@
         {{/if}}
         {{!-- link --}}
         {{#if link}}
-          <a class="link-{{link.type}}" href="{{link.url}}"><span class="span-label">{{link.label}}:</span> {{link.copy}}</a>
+          <p><a class="link-{{link.type}}" href="{{link.url}}"><span class="span-label">{{link.label}}:</span> {{link.copy}}</a></p>
         {{/if}}
 
         {{!-- tips section --}}
@@ -19,7 +19,7 @@
           <ul class="list-tips">
             {{#each tips as |tip|}}
               <li>
-                <span class="span-label">TIP:</span> {{tip}}
+                <p><span class="span-label">TIP:</span> {{tip}}</p>
               </li>
             {{/each}}
           </ul>
@@ -30,18 +30,29 @@
           <ol class="lessons">
             {{#each lessons as |lesson|}}
               <li>
-                {{{copy}}}
+                <p>{{{copy}}}</p>
 
                 {{!-- optional link --}}
                 {{#if link}}
-                  <p><a class="link-{{link.type}}" href="{{link.url}}"><span class="span-label">{{link.label}}:</span> {{link.copy}}</a></p>
+                  <p>
+                    <a class="link-{{link.type}}" href="{{link.url}}">
+                      <strong>{{link.label}}</strong> {{link.copy}}
+                    </a>
+                  </p>
                 {{/if}}
 
                 {{!-- optional alerts --}}
                 {{!-- TODO: make conditional by type (including bold labels) --}}
-                {{#if info}}
-                  {{#each info as |alert|}}
-                    <p>{{{alert.copy}}}</p>
+                {{#if alert}}
+                  {{#each alert as |alert|}}
+                    <p class="text-{{alert.type}}">
+                      <strong>
+                        {{#isEqual type value="success" }}SUCCESS:{{/isEqual}}
+                        {{#isEqual type value="warning" }}WATCH OUT FOR:{{/isEqual}}
+                      </strong>
+
+                      {{{alert.copy}}}
+                    </p>
                   {{/each}}
                 {{/if}}
               </li>

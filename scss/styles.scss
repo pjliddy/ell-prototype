@@ -23,6 +23,16 @@ ul {
   text-transform: uppercase;
 }
 
+.btn > .glyphicon {
+  margin-right: $quarter-space;
+}
+
+.btn-row {
+  .btn-group + .btn-group {
+    margin-left: $quarter-space;
+  }
+}
+
 //
 // HEADER AND FOOTER STYLES
 //
@@ -98,12 +108,26 @@ footer {
   .hero-footer {
     // use flex to push to bottom
     margin-top: auto;
+
+    @media (max-width: $screen-sm-max) {
+      margin-top: $base-space;
+    }
   }
 
   .hero-aside {
     color: $text-color;
   }
 }
+
+.body-main > .btn {
+  margin-bottom: $half-space;
+}
+
+//
+// BODY STYLES
+//
+
+
 
 //
 // COMPONENTS
@@ -127,8 +151,8 @@ footer {
 // share component used in hero
 
 .share {
-  .btn-group + .btn-group {
-    margin-left: $quarter-space;
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: $base-space;
   }
 
   .btn {
@@ -265,7 +289,7 @@ footer {
   }
 }
 
-.icon-tip{
+.icon-tip {
   &::before {
     content: '\e062';
   }
@@ -312,6 +336,28 @@ footer {
   }
 }
 
+.text-warning {
+  @extend %link-icon;
+  margin-left: $icon-offset;
+
+  &::before {
+    color: $alert-warning-text;
+    content: '\e101';
+    margin-left: -$icon-offset;
+  }
+}
+
+.text-success {
+  @extend %link-icon;
+  margin-left: $icon-offset;
+
+  &::before {
+    color: $alert-success-text;
+    content: '\e084';
+    margin-left: -$icon-offset;
+  }
+}
+
 // tips list items with icons
 
 .list-tips {
@@ -333,6 +379,10 @@ footer {
     &::before {
       content: '\e062';
     }
+
+    p {
+      margin-left: $icon-offset;
+    }
   }
 }
 
@@ -344,22 +394,35 @@ footer {
   margin-bottom: $line-height-computed;
 
   .nav-tabs {
+    border-bottom: 0;
     display: flex;
     width: 100%;
 
     li {
       flex-grow: 1;
-      text-align: center;
       margin-bottom: 0;
+      text-align: center;
     }
 
     li:not(.active) > a {
       background-color: $gray-lighter;
     }
+
+    li.active > a,
+    li > a {
+      border: 1px solid $gray-light;
+      font-weight: bold;
+      margin-right: 0;
+    }
+
+    li:not(:last-of-type) > a {
+      border-right: 0;
+    }
+
   }
 
   .tab-pane {
-    border: 1px solid $gray-lighter;
+    border: 1px solid $gray-light;
     border-top: 0;
     padding: $panel-body-padding;
   }
@@ -398,12 +461,17 @@ div[class^="tab-panel-"] {
   }
 }
 
-// activity panel styles
+// examples panel styles
 
-.tab-panel-activity {
-  a {
-    margin: $half-space 0;
-  }
+.content-objectives {
+  background-color: $gray-lighter;
+  border: 1px solid $gray-light;
+  margin-bottom: $line-height-computed;
+  padding: $quarter-space;
+}
+
+.content-examples {
+  padding: $quarter-space;
 }
 
 // comments panel styles

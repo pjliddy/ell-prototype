@@ -99,14 +99,14 @@
                     "type": "download",
                     "url": "javascript:void(0);"
                   },
-                  "info": [
+                  "alert": [
                     {
-                      "type": "alert",
-                      "copy": "<strong>Watch out for: </strong> Pair students as appropriate as they decide upon a hashtag for the image."
+                      "type": "warning",
+                      "copy": "Pair students as appropriate as they decide upon a hashtag for the image."
                     },
                     {
                       "type": "success",
-                      "copy": "<strong>Success: </strong> Students actively studying the image and taking the time to share their ideas."
+                      "copy": "Students actively studying the image and taking the time to share their ideas."
                     }
                   ]
                 },
@@ -115,19 +115,19 @@
                 },
                 {
                   "copy": "Students write that keyword or phrase on an index card with a hashtag (#) before it, the same way they might do on social media.",
-                  "info": [
+                  "alert": [
                     {
                       "type": "success",
-                      "copy": "<strong>Success: </strong> Students explaining why they choose a specific word or phrase."
+                      "copy": "Students explaining why they choose a specific word or phrase."
                     }
                   ]
                 },
                 {
                   "copy": "Students write that keyword or phrase on an index card with a hashtag (#) before it, the same way they might do on social media.",
-                  "info": [
+                  "alert": [
                     {
-                      "type": "info",
-                      "copy": "<strong>Watch out for: </strong> Encourage the use of new vocabulary by making sure studens understand every word used in this acrivity. Provide dictionary resources if necessary.."
+                      "type": "warning",
+                      "copy": "Encourage the use of new vocabulary by making sure studens understand every word used in this acrivity. Provide dictionary resources if necessary.."
                     }
                   ]
                 },
@@ -136,10 +136,10 @@
                 },
                 {
                   "copy": "When the frame is finished and students have had a chance to examine it, gather students together as a whole class to reflect on the hashtags.",
-                  "info": [
+                  "alert": [
                     {
                       "type": "success",
-                      "copy": "<strong>Success: </strong> Students noticing similarities, differences, surprises, context, or anything else that they noticed about hte workds they assigned to the image."
+                      "copy": "Students noticing similarities, differences, surprises, context, or anything else that they noticed about hte workds they assigned to the image."
                     }
                   ]
                 }
@@ -177,12 +177,12 @@
     ],
     "comments": {
       "type": "comments",
-      "title": "Comments",
+      "title": "Comments (20)",
       "panels": [
         {
           "type": "comments",
           "id": "comments",
-          "title": "Comments",
+          "title": "Comments (1)",
           "count": 1,
           "content": [
             {
@@ -204,7 +204,7 @@
         {
           "id": "notes",
           "type": "notes",
-          "title": "Private Notes",
+          "title": "Private Notes (19)",
           "count": 19,
           "content": [
             {

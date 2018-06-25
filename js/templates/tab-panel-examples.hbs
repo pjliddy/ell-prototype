@@ -2,7 +2,7 @@
   <div class="col-xs-12">
     <div class="tab-panel-examples">
       {{!-- filter buttons --}}
-      <div class="button-bar">
+      <div class="btn-row">
         <div class="btn-group">
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Grades: {{content.grade}} <span class="caret"></span></button>
           <ul class="dropdown-menu">
@@ -25,18 +25,22 @@
       <h3>{{content.grade}} {{content.subject}}</h3>
 
       {{!-- objectives --}}
-      <div class="row">
+      <div class="row content-objectives">
         {{#each content.objectives as |objective|}}
-          <div class="col-md-6">
+          <div class="col-sm-6">
             <h4>{{title}}</h4>
             <p>{{copy}}</p>
           </div>
         {{/each}}
+      </div>
 
+      <div class="row">
         <div class="col-xs-12">
-          {{#each content.copy as |copy|}}
-            <p>{{copy}}</p>
-          {{/each}}
+          <div class="content-examples">
+            {{#each content.copy as |copy|}}
+              <p>{{copy}}</p>
+            {{/each}}
+          </div>
         </div>
       </div>
     </div>
