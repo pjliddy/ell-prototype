@@ -75,8 +75,16 @@ footer {
 //
 
 .hero {
+  background: $hero-bg-color;
+  color: $hero-color;
+  margin-bottom: $base-space;
+
   @media (min-width: $screen-md) {
     padding: $base-space;
+  }
+
+  h1 {
+    font-size: $hero-heading-size;
   }
 
   .hero-content {
@@ -155,7 +163,7 @@ footer {
     margin-bottom: $base-space;
   }
 
-  .btn {
+  .btn-share {
     border-radius: $btn-border-radius-base 0 0 $btn-border-radius-base;
     padding: 6px 0 6px 12px;
 
@@ -164,6 +172,37 @@ footer {
       border-radius: 0;
       margin: -6px 1px -6px 6px;
       padding: 9px 6px;
+    }
+  }
+
+  .share-menu {
+    min-width: 240px;
+    padding: $quarter-space;
+
+    p {
+      color: $text-color;
+      font-size: $font-size-base;
+    }
+  }
+
+  .share-search-list {
+    margin-bottom: 0;
+    padding: $quarter-space;
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    .name, .email {
+      margin-bottom: 0;
+    }
+
+    .name {
+      font-weight: bold;
+    }
+
+    .email {
+      font-style: italic;
     }
   }
 }
@@ -361,8 +400,8 @@ footer {
 // tips list items with icons
 
 .list-tips {
-  -webkit-padding-start: 0;
   margin-bottom: $base-space;
+  padding-left: 0;
 
   li {
     @extend %link-icon;

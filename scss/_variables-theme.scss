@@ -22,6 +22,10 @@ $hero-min-height: 360px;
 $hero-color-secondary: $gray-lighter;
 $hero-icon-size: 42px;
 $hero-font-size: ceil(($font-size-base * 1.25)); // ~18px
+$hero-heading-size: ceil(($font-size-base * 4.5)); // ~63px
+$hero-color: $body-bg;
+$hero-bg-color: $gray;
+
 
 // share variables
 

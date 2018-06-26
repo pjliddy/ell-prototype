@@ -1,7 +1,12 @@
 'use strict'
 
+//
+// GitHub Repository: https://github.com/pjliddy/ell-prototype
+// GitHub Pages: https://pjliddy.github.io/ell-prototype/
+//
 // to publish to GitHub Pages:
 // git subtree push --prefix dist origin gh-pages
+//
 
 // document ready
 
@@ -14,6 +19,7 @@ $(function() {
 
 function setupTemplates() {
   // TODO: refactor to iterate through files in js/templates/*.hbs
+  
   registerPartials([
     'content-aside',
     'content-main',
@@ -51,6 +57,8 @@ Handlebars.registerHelper("isEqual", function(conditional, options) {
     return options.inverse(this);
   }
 });
+
+// register Handlebars partials
 
 function registerPartials(partials) {
   partials.forEach( name => {
